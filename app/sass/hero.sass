@@ -80,3 +80,60 @@
 	&:hover
 		cursor: pointer
 		filter: brightness(1.2)
+
+@keyframes fb
+  from
+    transform: rotate(0deg) translate(-140px) rotate(0deg)
+  to
+    transform: rotate(360deg) translate(-140px) rotate(-360deg)
+
+@keyframes ok
+  from
+    transform: rotate(0deg) translate(220px) rotate(0deg)
+  to
+    transform: rotate(360deg) translate(220px) rotate(-360deg)
+
+@keyframes vb
+  from
+    transform: rotate(0deg) translate(-320px) rotate(0deg)
+  to
+    transform: rotate(360deg) translate(-320px) rotate(-360deg)
+
+@keyframes vk
+  from
+    transform: rotate(0deg) translate(320px) rotate(0deg)
+  to
+    transform: rotate(360deg) translate(320px) rotate(-360deg)
+
+.animation-icon
+	z-index: 1000
+	position: absolute
+	transition: .2s
+	&:hover
+		cursor: pointer
+		filter: brightness(1.2)
+		
+
+.move-fb
+  top: 270px // отступ траектории сверху
+  left: 42% // отступ траектории слева
+  width: 100px
+  animation: fb 20s infinite linear
+
+.move-ok
+  top: 270px
+  left: 42%
+  width: 110px
+  animation: ok 30s infinite linear
+
+.move-vk
+	top: 270px 
+	left: 42%
+	width: 130px
+	animation: vk 50s infinite linear
+
+.move-vb
+	top: 270px 
+	left: 42%
+	width: 100px
+	animation: vb 50s infinite linear

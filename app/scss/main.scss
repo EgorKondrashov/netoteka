@@ -1,53 +1,103 @@
+@import "preloader";
 @import "vars";
-@import "fonts";
-@import "libs";
-
-::placeholder {
-	color: #666;
-}
-
-::selection {
-	background-color: $accent;
-	color: #fff;
-}
-
-body {
-	font-size: 16px;
-	min-width: 320px;
+  
+  .cat {
 	position: relative;
-	line-height: 1.65;
-	font-family: $default-font;
-	overflow-x: hidden;
-	color: $text;
-	input, textarea {
-		border: #666 1px solid;
-		outline: none;
-		&:focus:required:invalid {
-			border-color: red;
-		}
-		&:required:valid {
-			border-color: green;
-		}
+	width: 100%;
+	max-width: 20em;
+	overflow: hidden;
+	background-color: #e6dcdc;
+  
+	&::before {
+	  content: '';
+	  display: block;
+	  padding-bottom: 100%;
 	}
-}
+  
+	&:hover > * { animation-play-state: paused; }
+	&:active > * { animation-play-state: running; }
+  }
 
-.img-responsive {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	&.img-width {
-		width: 100%;
+@mixin fill-full($dir: 'full', $type: absolute) {
+	position: $type;
+	@if $dir != 'bottom' {top: 0; }
+	@if $dir != 'right' {left: 0; }
+	@if $dir != 'left' {right: 0; }
+	@if $dir != 'top' {bottom: 0; }
+  }
+  
+  %cat-img {
+	@include fill-full;
+	animation: rotating 2.79s cubic-bezier(.65, .54, .12, .93) infinite;
+  
+	&::before {
+	  content: '';
+	  position: absolute;
+	  width: 50%;
+	  height: 50%;
+	  background-size: 200%;
+	  background-repeat: no-repeat;
+	  background-image: url('https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il');
 	}
-}
-
-.text-center {
-	text-align: center;
-}
-
-b, strong {
-	font-weight: bold;
-}
-
-
+  }
+  
+  .cat__head {
+	@extend %cat-img;
+  
+	&::before {
+	  top: 0;
+	  right: 0;
+	  background-position: 100% 0%;
+	  transform-origin: 0% 100%;
+	  transform: rotate(90deg);
+	}
+  }
+  
+  .cat__tail {
+	@extend %cat-img;
+	animation-delay: .2s;
+  
+	&::before {
+	  left: 0;
+	  bottom: 0;
+	  background-position: 0% 100%;
+	  transform-origin: 100% 0%;
+	  transform: rotate(-30deg);
+	}
+  }
+  
+  .cat__body {
+	@extend %cat-img;
+	animation-delay: .1s;
+  
+	&:nth-of-type(2) {
+	  animation-delay: .2s;
+	}
+  
+	&::before {
+	  right: 0;
+	  bottom: 0;
+	  background-position: 100% 100%;
+	  transform-origin: 0% 0%;
+	}
+  }
+  
+  @keyframes rotating {
+	from { transform: rotate(720deg); }
+	to { transform: none; }
+  }
+  
+  .box {
+	display: flex;
+	height: 1000px;
+	flex: 1;
+	flex-direction: column;
+	justify-content: flex-start;
+	justify-content: center;
+	align-items: center;
+	background-color: #E6DCDC;
+  }
+  
+  
 
 @import "media"; // Always at the end

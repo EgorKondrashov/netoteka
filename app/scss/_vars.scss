@@ -1,6 +1,11 @@
-$default-font: "roboto-example", sans-serif;
-$accent: orange;
-$text: #333;
+$default-font: "Montserrat", 'sans-serif';
+$accent: #5E52EF;
+$main-text: #2D2D2D;
+$light-bcg: #F6F7FF;
+$light-text: #F7F7FF;
+$item-vk: #2A82BB;
+$item-vb: #8950A1;
+$item-ok: #FA8D11;
 
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px;
@@ -9,3 +14,4 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
 $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
 
 $gutter: $grid-gutter-width;
+

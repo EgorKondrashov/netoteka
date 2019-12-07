@@ -5,15 +5,105 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+	.header
+		&-img
+			width: 100%
+	.animation
+		&-block 
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			justify-content: flex-end
+		&-icon
+			width: 5em
+	.title
+		width: 100%
+	.move
+		&-fb
+			top: 190px
+	    left: 42%
+		&-ok	
+			top: 190px
+			left: 42%
+		&-vb
+			top: 190px
+			left: 42%
+		&-vk
+			top: 180px
+			left: 42%
+	.card-item
+		width: 300px
+	.item-text
+		padding-top: 5%
+
+	@keyframes vb
+	  from
+	    transform: rotate(0deg) translate(-220px) rotate(0deg)
+	  to
+	    transform: rotate(360deg) translate(-220px) rotate(-360deg)
+	@keyframes vk
+	  from
+	    transform: rotate(0deg) translate(90px) rotate(0deg)
+	  to
+	    transform: rotate(360deg) translate(90px) rotate(-360deg)
 
 // ≥992px
 +media-breakpoint-down(md)
+	.nav-item
+		a
+			font-size: 16px
+			text-decoration: underline
+	.row
+		&-menu
+			justify-content: center
+			height: 100%
+		&-header
+			margin-top: 10%
+	.nav-block
+		padding: 1% 0 1% 0
+	.logo
+		padding: 15% 0 15% 0
+	.animation-block
+		display: none
+	.header-content
+		height: 300px
+		align-items: center
+	.title
+		text-align: center
+	.text-item
+		text-align: center
+		width: 100%
+		margin-top: 3%
+	.card
+		&-item
+			width: 320px
+			margin-bottom: 5%
+		&-block
+			flex-wrap: wrap
+			justify-content: space-around
 
 // ≥768px
 +media-breakpoint-down(sm)
+	.nav-item
+		a
+			font-size: 16px
 
 // ≥576px
 +media-breakpoint-down(xs)
+	.row
+		&-menu
+			background: $accent
+	.nav-item
+		a
+			color: white
+			font-weight: 400
+			text-decoration: none
+	
+@media screen and (max-width: 400px)
+  .block
+    
 
 
 /*==========  Mobile First  ==========*/

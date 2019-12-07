@@ -96,13 +96,41 @@
 		&-menu
 			background: $accent
 	.nav-item
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		text-align: center
 		a
 			color: white
-			font-weight: 400
+			font-weight: 600
 			text-decoration: none
+		padding: 2% 1% 2% 1%
+	.nav-personal
+		background-color: #827AE3
+		border-right: 2px solid $accent
+	.nav-social
+		background-color: #827AE3
+	.nav-block
+		padding-bottom: 0
+		overflow: scroll
 	
-@media screen and (max-width: 400px)
-  .block
+@media screen and (max-width: 470px)
+  .title
+  	font-size: 2em
+  .text-item
+  	font-size: 1em
+  	line-height: 1.4
+  .row-header
+  	margin-top: 20%
+  	margin-bottom: 20%
+  .item-text
+  	font-size: 1.4em
+  .card-block
+  	padding: 4%
     
 
 
